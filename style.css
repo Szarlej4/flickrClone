@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'metropolis';
+    src: url(Metropolis-Regular.otf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolis';
+    src: url(Metropolis-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'metropolis';
+    padding: 0;
+    margin: 0;
+}
+
+.background-image {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    min-height: 40rem;
+}
+
+.top-panel {
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    justify-content: space-between;
+}
+
+.top-panel__logo {
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.search-block {
+    width: auto;
+    flex: 1;
+    margin-left: 7.5rem;
+    margin-right: 6.5rem;
+    max-width: 100%;
+    height: 2rem;
+    background: #d4d3d2;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    padding: .5rem;
+    border-radius: .15rem;
+    transition: background .2s ease-in-out;
+}
+
+.search-block__image {
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: invert(38%) sepia(4%) saturate(155%) hue-rotate(349deg) brightness(94%) contrast(90%);
+}
+
+.search-block__input {
+    color: #777875;
+    width: 100%;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background: #d4d3d2;
+    margin-left: .5rem;
+    transition: background .2s ease-in-out;
+    caret-color: black;
+}
+
+.search-block__input::placeholder {
+    display: none;
+}
+
+.search-block__input:focus {
+    outline: none;
+    border: none;
+    background: rgb(235, 235, 235)
+}
+
+.search-block:focus-within {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.links-wrapper {
+    margin-right: 1.5rem;
+    display: flex;
+    flex-flow: row;
+}
+
+.button {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .5em 1.2em;
+    display: block;
+}
+
+.button--signup {
+    color: rgb(25, 25, 25);
+    background: white;
+    border-radius: .2em;
+    font-weight: 500;
+}
+
+.button--change-color-hover {
+    transition: color .15s ease-out;
+}
+
+.button--change-color-hover:hover {
+    color: rgb(140, 140, 140);
+}
+
+.links-wrapper__link {
+    color: white;
+}
+
+.main-panel {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.slogan {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.slogan__heading {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 500;
+}
+
+.slogan__desc {
+    margin: 1.7rem 0 2.5rem 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+.button--start {
+    font-size: 1.4rem;
+    color: rgb(25, 25, 25);
+    background: white;
+    border-radius: .15em;
+    transition: color .15s ease-out;
+    font-weight: 600;
+    padding: .9em 1.5em;
+    margin-top: .5rem;
+}
+
+.pic-desc {
+    position: absolute;
+    bottom: 0;
+    font-size: .8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: .8rem;
+}
+
+.pic-desc__text {
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.bottom-panel {
+    height: 3.5rem;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bottom-panel__link {
+    color: rgb(139, 139, 139);
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.bottom-panel__link:hover {
+    color: rgb(230, 230, 230);
+}
+
+.social-media {
+    gap: 2.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media__link:first-of-type .social-media__link__logo {
+    height: 1.2rem;
+}
+
+.social-media__link__logo {
+    height: 1.5rem;
+    filter: invert(73%) sepia(0%) saturate(1278%) hue-rotate(134deg) brightness(84%) contrast(90%);
+    transition: filter .1s ease-in;
+}
+
+.social-media__link__logo:hover {
+    filter: invert(100%) sepia(43%) saturate(61%) hue-rotate(160deg) brightness(115%) contrast(100%);
+}
+
+@media (max-width: 1330px) {
+    .background-image {
+        width: 1330px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
