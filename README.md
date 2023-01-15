@@ -1,2 +1,2 @@
 # flickrClone
-Flickr main page clone, not responsive
+Flickr main page clone
